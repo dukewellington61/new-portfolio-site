@@ -1,0 +1,22 @@
+.jumbotron {
+  background-image: url("../img/landscape.jpg");
+  background-size: cover;
+}
+
+.jumbotron p {
+  color: white;
+}
+
+.col-sm {
+  text-align: justify;
+}
+
+.about{
+	text-decoration: none;
+	color:blue;
+}
+
+.about:hover{
+	color:red;
+  font-weight: bold;
+}
