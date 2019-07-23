@@ -77,7 +77,7 @@ function typeLineOne() {
     clearInterval(interval);    
     setTimeout ( () => { 
       const interval2 = setInterval ( typeLineTwo, 100 );
-      setTimeout ( () => { $ ( '#text-line-2' ).toggleClass ('changed' ); clearInterval ( interval2 ) }, 2000 );    
+      setTimeout ( () => { $ ( '#text-line-2' ).toggleClass ('changed'); clearInterval ( interval2 ) }, 2000 );    
     }, 600 );
     
   }
@@ -105,15 +105,21 @@ function typeLineThree() {
 const interval = setInterval(typeLineOne, 100);
 
 
-//Delay Display Read More Link in Intro Section
-$('#read-more-link').hide().delay(6000).fadeIn(400);  
+//Delay Display See More Link in Intro Section
+$('#read-more-link').hide().delay(6000).fadeIn(400); 
+
+
+//See More Button Slide out on Scroll down
+documentEl.on('scroll', () => {
+  if (documentEl.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) $('#read-more-link').addClass('roll-out-blurred-left');
+});
   
 
 //Type Writer Effect for Header Projects
 const headerEl = document.querySelector("#projects-header");
 const headerText = "Projects"; 
 let _PART_INDEX_LINE_0 = 0;
-const documentElement = $(document);
+
 
 
 function typeHeaderProject() { 
@@ -122,17 +128,17 @@ function typeHeaderProject() {
   _PART_INDEX_LINE_0++;	
 };
 
-documentElement.on('scroll.awesome', () => {
-  if (documentElement.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) {
+documentEl.on('scroll.awesome', () => {
+  if (documentEl.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) {
     
     const headerProjectInterval = setInterval(typeHeaderProject, 250);
-    documentElement.off('scroll.awesome');
+    documentEl.off('scroll.awesome');
     setTimeout ( () => clearInterval ( headerProjectInterval ), 3000 )
   };
 });
 
 //Project Fields slide in
-const documentEl = $(document);   
+   
  
 documentEl.on('scroll', () => {
   if (documentEl.scrollTop() > screen.height - 200) {
