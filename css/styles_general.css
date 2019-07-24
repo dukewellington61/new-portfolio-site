@@ -261,7 +261,7 @@
 
 /*Projects*/
 #projects {  
-  height: 80vh; 
+  height: 150vh; 
 }
 
 #projects-header {
@@ -278,7 +278,7 @@
 }
 
 #projects-header:after {
-  content: "";
+  content: ".";
   background: white;
   -webkit-animation: blink 0.8s infinite;  
 }
@@ -294,51 +294,66 @@
   100% {
     opacity: 1;
   }
-}
-
-/* .animated {
-  top: 10%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  font-weight: bold;
-  position: relative;
-  width: 5%;
-  margin: 0 auto;
-  border-right: .1em solid orange;
-  font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);    
-}
-
-.anim-typewriter {
-  font-size: 4em;
-  animation: typewriter 2s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter {
-  from{width: 0;}
-  to{width: 15%;}
-}
-@keyframes blinkTextCursor {
-  from{border-right-color: orange}
-  to{border-right-color: transparent;}
-} */
+} 
 
 #project-row {
+  height: 50%;
   position: relative;
   top: 30%;
 }
 
 .project-field {
+  height: 50%;
+  width: 50%;
   display: none;
   text-align: center;  
 }
 
 #sliding-puzzle-img, #tic-tac-toe-img {
-  opacity: 0.75;
+  position: absolute;
   width: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.project-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 1;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.project-field:hover .project-content {
+  opacity: 0.8;
+}
+
+.project-description {
+  width: 100%;
+  color: white;
+  font-size: 1.25em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#react-logo {
+  height: 100%;  
 }
 
 #modal-sliding-puzzle-content {

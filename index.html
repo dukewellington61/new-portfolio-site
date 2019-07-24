@@ -46,7 +46,7 @@
       <a class="nav-link"href="#intro">Intro<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#projects">Work</a>
+      <a class="nav-link" href="#projects">Projects</a>
     </li>    
     <li class="nav-item">
       <a class="nav-link" href="#contact">Contact</a>
@@ -79,24 +79,30 @@
   
   <div id="project-row" class="row slideInUp">
     
-    <div class="project-field col-sm-12 col-md-4">
-      <h1>Sliding Puzzle</h1>
-      <p>This is a Sliding Puzzle coded with React</p>
-      <a data-toggle="modal" data-target=".bd-example-modal-1"><img id="sliding-puzzle-img" class="project-images" src="./img/SlidingPuzzle.JPG" ></a>     
-    </div>    
+    <div class="project-field col-sm-12 col-md-6">
+      <img id="sliding-puzzle-img" class="project-images" src="./img/SlidingPuzzle.JPG">
+      <div class="project-content" data-toggle="modal" data-target=".bd-example-modal-1">
+        <p class="project-description">This is a Sliding Puzzle coded with React</p>
+        <img id="react-logo" src="./img/react-logo2.png" >
+      </div>         
+    </div>      
 
-    <div class="project-field col-sm-12 col-md-4">
-      <h1>Web Shop</h1>
-      <p>This is an example Web Shop which I've programmed using Ruby on Rails</p>
-      <a data-toggle="modal" href="remote.html" data-target=".bd-example-modal-2"><img id="web-shop-img" class="project-images" src="./img/webShop.JPG" ></a>
-    </div>
-
-    <div class="project-field col-sm-12 col-md-4">
-      <h1>Tic Tac Toe</h1>
-      <p>This is a game of Tic Tac Toe coded with Node.js</p>
-      <a data-toggle="modal" data-target=".bd-example-modal-3"><img id="sliding-puzzle-img" class="project-images" src="./img/TicTacToe.JPG" ></a> 
-    </div>
+    <div class="project-field col-sm-12 col-md-6">
+      <img id="tic-tac-toe-img" class="project-images" src="./img/TicTacToe.JPG" >
+      <div class="project-content" data-toggle="modal" data-target=".bd-example-modal-3">
+        <p class="project-description">This is a game of Tic Tac Toe coded with Node.js</p>
+        <img id="react-logo" src="./img/node-logo.jpg" >        
+      </div>
+    </div>   
   </div>   
+
+  <div class="project-field-shop col-sm-12 col-md-4">
+    <img id="web-shop-img" class="project-images" src="./img/webShop.JPG">
+    <div class="project-content" data-toggle="modal" data-target=".bd-example-modal-2">
+      <p class="project-description">This is an example Web Shop which I've programmed using Ruby on Rails</p>
+      <img id="react-logo" src="./img/ruby-logo.jpg" >
+    </div>  
+  </div>
 
 <!-- a bunch of modals -->
   <div class="modal fade bd-example-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

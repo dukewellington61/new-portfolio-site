@@ -5,7 +5,7 @@ const documentEl = $(document);
 // Twitter
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
- $(document).ready(function(){
+$(document).ready(function(){
         
 //Smooth Scolling
 var $root = $('html, body');
@@ -120,8 +120,6 @@ const headerEl = document.querySelector("#projects-header");
 const headerText = "Projects"; 
 let _PART_INDEX_LINE_0 = 0;
 
-
-
 function typeHeaderProject() { 
   var text = headerText.substring(0, _PART_INDEX_LINE_0 + 1);
   headerEl.innerHTML = text; 
@@ -133,13 +131,12 @@ documentEl.on('scroll.awesome', () => {
     
     const headerProjectInterval = setInterval(typeHeaderProject, 250);
     documentEl.off('scroll.awesome');
-    setTimeout ( () => clearInterval ( headerProjectInterval ), 3000 )
+    setTimeout ( () => clearInterval ( headerProjectInterval ), 6000 )
   };
 });
 
-//Project Fields slide in
-   
- 
+
+//Project Fields slide in 
 documentEl.on('scroll', () => {
   if (documentEl.scrollTop() > screen.height - 200) {
     
@@ -152,24 +149,38 @@ documentEl.on('scroll', () => {
 $('#modal-sliding-puzzle-content').on('load', () => {
   $("#spinner-div").hide();    
 });
-  
-
-//Contact Button open Form
-$("#contact-button").on('click', () => $("form").show().addClass("slide-in-elliptic-top-fwd")).on('click', () => $("#contact-button").hide());
 
 
 //Contact Button move down on scroll
 let contactButtonElement = $("#contact-button");  
-let contactContainerEl = $("#contact"); 
-let contactContainerEl2 = document.getElementById('contact');
-  
+const contactButtonObject = {
+  down: false
+}
 
-documentEl.on('scroll', () => moveAndStop());    
+documentEl.on('scroll', () => moveDown());    
 
-const moveAndStop = () => {
-  if (documentEl.scrollTop() > screen.height * 1.25) contactButtonElement.animate({top: "50%"}, 2000);  
-  if (documentEl.scrollTop() > screen.height * 1.25) contactButtonElement.animate({top: "50%"}, 2000);
-};  
+const moveDown = () => {
+  if (documentEl.scrollTop() > screen.height * 1.25 && contactButtonObject.down === false) {
+    contactButtonElement.animate({top: "50%"}, 2000); 
+    contactButtonObject.down = true
+  };  
+}; 
+
+
+//Contact Button move up on scroll
+documentEl.on('scroll', () => moveUp()); 
+
+const moveUp = () => {
+  if (documentEl.scrollTop() < screen.height * 1.25 && contactButtonObject.down === true) {
+    contactButtonElement.animate({top: "10%"}, 2000); 
+    contactButtonObject.down = false
+  };  
+}; 
+
+
+
+//Contact Button open Form
+$("#contact-button").on('click', () => $("form").show().addClass("slide-in-elliptic-top-fwd")).on('click', () => $("#contact-button").hide());
 
 
 //Contact Form//
