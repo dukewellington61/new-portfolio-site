@@ -261,7 +261,7 @@
 
 /*Projects*/
 #projects {  
-  height: 150vh; 
+  height: 300vh; 
 }
 
 #projects-header {
@@ -296,27 +296,46 @@
   }
 } 
 
-#project-row {
-  height: 50%;
+#project-row1 {
+  height: 15%;
+  position: relative;
+  top: 30%;
+}
+
+#project-row2 {
+  height: 15%;
   position: relative;
   top: 30%;
 }
 
 .project-field {
-  height: 50%;
-  width: 50%;
   display: none;
+  height: 100%;  
   text-align: center;  
+  border-style: solid;
+  border-width: 1em;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 #sliding-puzzle-img, #tic-tac-toe-img {
-  position: absolute;
-  width: 50%;
+  position: absolute;  
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#web-shop-img {
+  height: 95%;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.project-images {
+  height: 95%;
 }
 
 .project-content {
@@ -329,13 +348,22 @@
   left: 0;
   right: 0;
   height: 100%;
-  opacity: 1;
   transition: .5s ease;
-  background-color: black;
+  background-color: black;  
 }
 
 .project-field:hover .project-content {
   opacity: 0.8;
+  border: solid;
+  border-color: white;
+}
+
+.project-field:hover #web-shop-content {
+  opacity: 0.5;
+}
+
+.project-field:hover .project-description {
+  opacity: 0;
 }
 
 .project-description {
@@ -350,10 +378,20 @@
   transform: translate(-50%, -50%);
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
 
 #react-logo {
   height: 100%;  
+}
+
+#ruby-logo {
+  position: relative;
+  height: 80%;  
+  margin: 0;  
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #modal-sliding-puzzle-content {
@@ -415,10 +453,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#web-shop-img {
-  width: 100%;
 }
 
 .section {
