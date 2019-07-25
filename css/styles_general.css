@@ -118,21 +118,21 @@
 
 #text-line-1  {
   position: absolute;
+  left: 25%;
   top: 25%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);   
   font-size: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-weight: bold;   	
-	letter-spacing: 2px;
+  letter-spacing: 2px;
+  justify-content: left;
 }
 
 #text-line-1:after {
   content: ".";
   background: white;
   -webkit-animation: blink 0.8s infinite;  
+  box-sizing: content-box;
 }
 
 #text-line-1.changed:after {
@@ -151,14 +151,13 @@
 #text-line-2 {
   position: absolute;
   top: 40%;
+  left: 25%;
   font-size: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-weight: bold; 
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); 	
-	letter-spacing: 2px;
+  letter-spacing: 2px;
+  justify-content: left;
 }
 
 #text-line-2:after {
@@ -182,15 +181,14 @@
 
 #text-line-3 {
   position: absolute;
-  top: 50%;
+  top: 55%;
+  left: 25%;
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-weight: bold;  
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); 	
-	letter-spacing: 2px;
+  letter-spacing: 2px;
+  justify-content: left;
 }
 
 #text-line-3:after {
@@ -212,8 +210,31 @@
   }
 }
 
+#intro-row {
+  position: relative;
+  height: 100%;
+}
+
+.intro-field {
+  position: relative;
+  height: 90%;
+  width: 45%
+}
+
+#intro-img {
+  position: relative;
+  height: 100%;
+  opacity: 0.5;
+  filter: grayscale(25%);
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+};
+
+  
+}
+
 #read-more-link {
-  position: absolute;
+  position: relative;
   top: 80%;
   left: 50%;
   margin-right: -50%;
@@ -261,12 +282,12 @@
 
 /*Projects*/
 #projects {  
-  height: 300vh; 
+  height: 120vh; 
 }
 
 #projects-header {
   position: relative;
-  top: 15%;
+  top: 5%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-weight: bold;
@@ -297,15 +318,15 @@
 } 
 
 #project-row1 {
-  height: 15%;
+  height: 40%;
   position: relative;
-  top: 30%;
+  top: 5%;
 }
 
 #project-row2 {
-  height: 15%;
+  height: 40%;
   position: relative;
-  top: 30%;
+  top: 5%;
 }
 
 .project-field {

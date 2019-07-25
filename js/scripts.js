@@ -52,7 +52,7 @@ $(function() {
 //Type Writer Effect for Intro
 var _CONTENT_LINE_1 = "Hi, I'm Andreas."; 
 var _CONTENT_LINE_2 = "Web Development"; 
-var _CONTENT_LINE_3 = "...is what I do."; 
+var _CONTENT_LINE_3 = "is what I do."; 
 
 var _PART_INDEX_LINE_1 = 0;
 var _PART_INDEX_LINE_2 = 0;
