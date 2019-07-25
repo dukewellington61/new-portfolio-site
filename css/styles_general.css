@@ -31,26 +31,17 @@
   background-size: cover; 
 }
 
-#hero_image2 {
-  background-image: url(../img/hero_img.jpg);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  z-index: -1;
-}
-
 .greyscale {
   -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
 }
 
-.swing-in-top-fwd {  
+.skew-background-img {  
   transform: scale(1.1) skew(10deg);
   transition: 5000ms ease all;
 }
 
-.swing-in-top-bckw {
+.unskew-background-img {
   transform: scale(1) skew(-10deg);
   transition: 5000ms ease all;
 }
@@ -210,6 +201,13 @@
   }
 }
 
+#read-more-link {
+  position: absolute;
+  top: 70%;
+  left: 25%; 
+  background-color: black;
+}
+
 #intro-row {
   position: relative;
   height: 100%;
@@ -228,17 +226,10 @@
   filter: grayscale(25%);
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
     from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-};
+};    
 
-  
-}
-
-#read-more-link {
-  position: relative;
-  top: 80%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); 
+#read-more-link {  
+  background-color:black;
 }
 
 .roll-out-blurred-left {
@@ -282,12 +273,12 @@
 
 /*Projects*/
 #projects {  
-  height: 120vh; 
+  height: 130vh; 
 }
 
 #projects-header {
   position: relative;
-  top: 5%;
+  top: 10%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   font-weight: bold;
@@ -320,13 +311,13 @@
 #project-row1 {
   height: 40%;
   position: relative;
-  top: 5%;
+  top: 10%;
 }
 
 #project-row2 {
   height: 40%;
   position: relative;
-  top: 5%;
+  top: 10%;
 }
 
 .project-field {

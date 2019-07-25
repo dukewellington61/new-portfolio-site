@@ -14,7 +14,7 @@ $('#navbar-example a, #read-more-link').click(function() {
   if (href != undefined && href != '#') {
     $root.animate({
       scrollTop: $(href).offset().top
-    }, 500, function () {
+    }, 2500, function () {
       window.location.hash = href;
     });
   }
@@ -38,12 +38,12 @@ $(function() {
   let scrollObject1 = {};
 
   documentEl.on('scroll', () => {      
-    if (documentEl.scrollTop() + screen.height > screen.height) {
+    if (documentEl.scrollTop() + screen.height > screen.height) {      
+      $('#hero_image').addClass('greyscale').addClass('skew-background-img').removeClass('unskew-background-img');        
       scrollObject1.higher = true;
-      $('#hero_image').addClass('greyscale').addClass('swing-in-top-fwd').removeClass('swing-in-top-bckw');        
     };  
     if (documentEl.scrollTop() < screen.height - 200) {       
-      if (scrollObject1.higher) $('#hero_image').removeClass('swing-in-top-fwd').addClass('swing-in-top-bckw').removeClass('greyscale');        
+      if (scrollObject1.higher) $('#hero_image').removeClass('skew-background-img').addClass('unskew-background-img').removeClass('greyscale');        
     };   
   });
 });  
@@ -105,13 +105,13 @@ function typeLineThree() {
 const interval = setInterval(typeLineOne, 100);
 
 
-//Delay Display See More Link in Intro Section
+// Delay Display See More Link in Intro Section
 $('#read-more-link').hide().delay(6000).fadeIn(400); 
 
 
-//See More Button Slide out on Scroll down
+// See More Button Slide out on Scroll down
 documentEl.on('scroll', () => {
-  if (documentEl.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) $('#read-more-link').addClass('roll-out-blurred-left');
+  if (documentEl.scrollTop() + screen.height > screen.height + 100) $('#read-more-link').addClass('roll-out-blurred-left');
 });
   
 
@@ -176,7 +176,6 @@ const moveUp = () => {
     contactButtonObject.down = false
   };  
 }; 
-
 
 
 //Contact Button open Form
