@@ -143,86 +143,68 @@ documentEl.on('scroll', () => {
     $('.project-field').show().addClass('slide-in-elliptic-top-fwd');
   };
 });
+
+//Iframes reveal themselves on click and see-the-code-buttons appear
+let projectImageVariable = Array.from(document.getElementsByClassName('project-image-container'));
+
+projectImageVariable.map(projectImageContainer => projectImageContainer.addEventListener("click", event => hideOrShowElement(event)));
+
+const hideOrShowElement = e => {
+  e.currentTarget.classList.add('project-image-hide');  
+  if (e.currentTarget.id.includes('puzzle')) document.querySelector('#see-the-code-button-puzzle').classList.add('see-the-code-button-show');
+  if (e.currentTarget.id.includes('tic-tac-toe')) document.querySelector('#see-the-code-button-tic-tac-toe').classList.add('see-the-code-button-show');  
+};
+
   
-  
-//Modal has Loader Screen
-$('#modal-sliding-puzzle-content').on('load', () => {
-  $("#spinner-div").hide();    
+//Iframe has Loading Spinner
+
+$('#puzzle-iframe').on('load', function(){
+  $('.project-spinner').addClass('hide-spinner')
 });
 
+const addClassAfterWindowLoad = () => {  
+  if (!$('.project-spinner').hasClass('hide-spinner')) $('.project-spinner').addClass('hide-spinner');
+};
 
-//Contact Button move down on scroll
-let contactButtonElement = $("#contact-button");  
-const contactButtonObject = {
-  down: false
-}
+$(window).on('load', () => addClassAfterWindowLoad());
 
-documentEl.on('scroll', () => moveDown());    
 
-const moveDown = () => {
-  if (documentEl.scrollTop() > screen.height * 1.25 && contactButtonObject.down === false) {
-    contactButtonElement.animate({top: "50%"}, 2000); 
-    contactButtonObject.down = true
+//gist open and close
+
+const gistState = {
+  puzzleShow: false,
+  ticTacToeShow: false
+};
+
+document.querySelector("#see-the-code-button-puzzle").addEventListener('click', e => gistState.puzzleShow == false ? showGist(e) : hideGist(e));
+document.querySelector("#see-the-code-button-tic-tac-toe").addEventListener('click', e => gistState.ticTacToeShow == false ? showGist(e) : hideGist(e));
+
+const showGist = (e) => {
+  if (e.currentTarget.id.includes('puzzle')) {
+    document.querySelector('#puzzle-gist-wrapper').classList.add('show-gist');
+    gistState.puzzleShow = true;
+  };
+
+  if (e.currentTarget.id.includes('tic-tac-toe')) {
+    document.querySelector('#tic-tac-toe-gist-wrapper').classList.add('show-gist');
+    gistState.ticTacToeShow = true;
   };  
-}; 
 
+  e.currentTarget.innerHTML ='hide the code';
+};
 
-//Contact Button move up on scroll
-documentEl.on('scroll', () => moveUp()); 
+const hideGist = (e) => {
+  if (e.currentTarget.id.includes('puzzle')) {
+    document.querySelector('#puzzle-gist-wrapper').classList.remove('show-gist');
+    gistState.puzzleShow = false;
+  };
 
-const moveUp = () => {
-  if (documentEl.scrollTop() < screen.height * 1.25 && contactButtonObject.down === true) {
-    contactButtonElement.animate({top: "10%"}, 2000); 
-    contactButtonObject.down = false
+  if (e.currentTarget.id.includes('tic-tac-toe')) {
+    document.querySelector('#tic-tac-toe-gist-wrapper').classList.remove('show-gist');
+    gistState.ticTacToeShow = false;
   };  
-}; 
 
+  e.currentTarget.innerHTML ='show the code';
+};
 
-//Contact Button open Form
-$("#contact-button").on('click', () => $("form").show().addClass("slide-in-elliptic-top-fwd")).on('click', () => $("#contact-button").hide());
-
-
-//Contact Form//
-$("#submit-button").on('click', function() {
-
-  let name = $("#name").val();
-
-  let email = $("#email").val();
-
-  let message = $("#message-box").val();
-
-  if (message==="") {
-    $("#message-box").css("border-color", "red");
-}
-
-else {
-
- 	if (message!="" && name==="" || email==="") {
- 		$("#visible-comment").html("If you wanna leave a message please leave your name and email address too");
- 	}
-
- 		else {
-
- 			$("#visible-comment").html("Thank you for leaving a message. We shall get back to you shortly.");
- 			$(".form-group-name").hide();
-
- 			$(".form-group-phone").hide();
-
- 			$(".form-group-email").hide();
-
- 			$("#message").hide()
-
- 			$("#submit-button").hide(); 	
-}
-
-  return false;
-  }
-  	
 });
-  
-});
-
- 
-
- 
-
