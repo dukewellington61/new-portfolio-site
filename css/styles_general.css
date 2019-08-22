@@ -6,9 +6,9 @@ body {
 
 /*Navbar*/
 
-.navbar-dark {
+/* .navbar-dark {
   opacity: 0.5;
-}
+} */
 
 .nav-link {
   font-size: 1.25em;
@@ -199,6 +199,10 @@ body {
   margin-top: 5em !important; 
 }
 
+#webshop-container {
+  margin-top: 5em !important; 
+}
+
 .project-container {
   flex-direction: column;
   position: relative;  
@@ -235,6 +239,9 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
   z-index: 99;
 }
 
@@ -257,11 +264,12 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);  
   z-index: -1;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
   .project-description {
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }
 
@@ -328,10 +336,6 @@ body {
   padding: 0;
 }
 
-#see-the-code-button-tic-tac-toe {
-  margin-top: 1.5em;
-}
-
 @media only screen and (max-width: 600px) {
   .see-the-code-button {
     position: absolute;
@@ -342,7 +346,19 @@ body {
     left: 0;
     right: 0;
   }
-} 
+  
+  #see-the-code-button-puzzle {
+    margin-top: 0.25em;
+  }
+  
+  #see-the-code-button-tic-tac-toe {
+    margin-top: 1.5em;
+  }
+  
+  #see-the-code-button-webshop {
+    margin-top: 1.5em;
+  }
+}
 
 .gist-wrapper {
   display: none;
@@ -377,3 +393,88 @@ body {
 .gist .blob-code-inner {
   font-size: 1.5em !important
 }
+
+
+/* get in contact */
+
+#contact {  
+  max-height: 100%; 
+  width: 100%;  
+  padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+  #contact {
+    padding-top: 15em !important;
+  }
+}
+
+#message-field-header {  
+  color: white;  
+  left: 0;
+  right: 0;  
+  text-align: center; 
+  font-size: 1.25em;
+}
+
+form {  
+  top: 20%;  
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+[class^="form-group"] {
+  opacity: 0.75;
+}
+
+#email {
+  margin-top: 2em;
+}
+
+.form-group-message-box {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#message {
+  width: 100%;
+  height: 23em;
+}
+
+@media (max-width: 361px) {
+  #message-box {
+    height: 250px;
+  }
+}
+
+#submit-button {
+  font-family: Concert One,ZCOOL QingKe HuangYou,Poppins,Arial, sans-serif;
+} 
+
+@media (max-width: 576px) {
+  form .form-group {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  form .contactbox {
+    padding-left: 0;
+  }
+}
+
+.hide-form {
+  visibility: hidden;
+}
+
+/* footer */
+
+footer {
+  position: relative;
+  background-color: grey;
+  opacity: 0.75;
+  height: 100px;
+  margin-top: 5em;
+} 

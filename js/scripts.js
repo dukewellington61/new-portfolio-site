@@ -152,7 +152,8 @@ projectImageVariable.map(projectImageContainer => projectImageContainer.addEvent
 const hideOrShowElement = e => {
   e.currentTarget.classList.add('project-image-hide');  
   if (e.currentTarget.id.includes('puzzle')) document.querySelector('#see-the-code-button-puzzle').classList.add('see-the-code-button-show');
-  if (e.currentTarget.id.includes('tic-tac-toe')) document.querySelector('#see-the-code-button-tic-tac-toe').classList.add('see-the-code-button-show');  
+  if (e.currentTarget.id.includes('tic-tac-toe')) document.querySelector('#see-the-code-button-tic-tac-toe').classList.add('see-the-code-button-show'); 
+  if (e.currentTarget.id.includes('webshop')) document.querySelector('#see-the-code-button-webshop').classList.add('see-the-code-button-show');  
 };
 
   
@@ -208,3 +209,33 @@ const hideGist = (e) => {
 };
 
 });
+
+
+// Email form disappears when message has been sent and a response text appears on the screen (the mailing stuff is handled by https://formsubmit.co/)
+
+let testVar1 = "";
+let testVar2 = "";
+
+window.onload = () => {
+  if (performance.navigation.type > 0) { //performance.navigation.type counts the number of reloads. If the page is left and then reentered via redirect it starts afresh.
+    testVar1 = "some other value";
+  }
+  else {
+    testVar1 = JSON.stringify('https://formsubmit.co/dukewellington61@googlemail.com');
+    testVar2 = JSON.stringify(document.referrer); //document.referrer remembers the page from which my page was accessed (i.e. the formsubmit page) 
+    if (testVar2 === testVar1) {
+      document.querySelector('form').classList.add('hide-form'); 
+      document.querySelector('#message-field-header').innerHTML = "Thank you for your message. I will be in touch very shortly.";
+    };
+  };
+};
+
+
+
+
+
+
+
+
+
+

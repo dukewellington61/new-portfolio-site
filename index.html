@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
     <title>Duke.Well.Web.Dev.Portfolio</title>
    
@@ -112,7 +112,7 @@
 
         <div id="tic-tac-toe-project-image-container" class="project-image-container">
           <img id="tic-tac-toe-logo" class="project-image" src="./img/node-logo.jpg">
-          <span class="project-description">This is a multiplayer online version <br> of Tic Tac Toe coded with Node.js</span>
+          <span class="project-description">This is a multiplayer online version of <br> Tic Tac Toe coded with Node.js</span>
         </div>
           
         <iframe id="tic-tac-toe-iframe" class="project-iframe" src="https://tic-tac-toe-web-s.herokuapp.com/" scrolling="no"></iframe>
@@ -134,13 +134,75 @@
     </div>   
 
 
+    <div id="webshop-container" class="project-container">                 
+      
+      <div class="iframe-wrapper">
 
+        <div id="webshop-project-image-container" class="project-image-container">
+          <img id="webshop-logo" class="project-image" src="./img/ruby-logo.png">
+          <span class="project-description">This is an example webshop coded with <br> Ruby on Rails</span>
+        </div>
+          
+        <iframe id="webshop-iframe" class="project-iframe" src="https://duke-wellington-example-app.herokuapp.com/" scrolling="yes"></iframe>
 
+        <div id="spinner-div" class="project-spinner spinner-border" role="status">      
+          <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
+          <p>loading app...</p>          
+        </div> 
+        
+      </div>      
+        
+      <button id="see-the-code-button-webshop" class="see-the-code-button btn-lg btn-dark" target="_blank" onclick="window.open('https://github.com/dukewellington61/example-webshop');return false;">visit the GitHub</button>  
 
+    </div>   
 
   </div><!--Projects--> 
 
+  <!--Contact-->
+  <div id="contact" class="container-fluid">   
+
+    <p id="message-field-header">Feel free to send me a message.</p>
+
+    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="from_email@example.com"
+    action="https://formsubmit.co/dukewellington61@googlemail.com"> 
+
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="form-group-name">
+            
+            <input class="form-control" placeholder="Enter your name" type="text" id="name" name="email" required>
+          </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6">
+          <div class="form-group-email">  
+            <input type="hidden" name="_replyto">    
+            <input class="form-control" placeholder="Enter your email address" type="email" id="email" name="email" required>
+          </div>
+        </div>
+      </div>           
+
+      <div class="form-group-message-box">
+        <textarea style="resize:none" placeholder="Place your message here" id="message" name="message"></textarea>              
+      </div> 
+
+      <input type="hidden" name="_next" value="https://dukewellingtons-portfolio-site.netlify.com/#contact">
+
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send
+      </button>      
+      
+    </form>   
+
+  </div> 
+
+  <footer>
+    <div class="copyright">&copy Duke.Wellington 2019</div>
+  </footer>
+
 </body>
+
+
 
 
 
