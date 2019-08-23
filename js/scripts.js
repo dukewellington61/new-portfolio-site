@@ -21,6 +21,15 @@ $('#navbar-example a, #read-more-link').click(function() {
   return false;
 });
 
+//No fixed navbar on width 598xpx - 768px
+
+document.addEventListener('scroll', () => removeNavbar());
+
+const removeNavbar = () => {
+  if (window.screen.width >=598 && window.screen.width <= 768) {
+    $(window).scrollTop() > 10 ? document.querySelector('#navbar-example').classList.add('remove-navbar') : document.querySelector('#navbar-example').classList.remove('remove-navbar');  
+  };
+};
 
 //Interval for Glitch Backround Image
 const glitch = () => {
