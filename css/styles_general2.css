@@ -4,11 +4,11 @@ body {
   width: 100%;  
 }
 
-@media only screen and (min-width: 598px) {
+/* @media only screen and (min-width: 598px) {
   body {
     width: 92.5%;
   }
-}
+} */
 
 
 /*Navbar*/
@@ -19,11 +19,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@media only screen and (min-width: 598px) {
+/* @media only screen and (min-width: 598px) {
   #navbar-example {
     width: 92.5%;
   }
-}
+} */
  
 .navbar-brand {
  text-transform: uppercase;
@@ -235,8 +235,20 @@ body {
   margin-top: 5em !important;  
 }
 
+@media only screen and (min-width: 598px) {
+  #puzzle-container {
+    height: 17em;
+  }
+}
+
 #tic-tac-toe-container {
   margin-top: 5em !important; 
+}
+
+@media only screen and (min-width: 598px) {
+  #tic-tac-toe-container {
+    height: 18em;
+  }
 }
 
 #webshop-container {
@@ -250,6 +262,7 @@ body {
 }
 
 .project-container {
+  display: inline-block;
   flex-direction: column;
   position: relative;  
   width: 100%;
@@ -266,12 +279,6 @@ body {
   }
 }
 
-@media only screen and (min-width: 598px) {
-  #tic-tac-toe-container {
-    height: 21em;
-  }
-}
-
 
 /* projects - iframes */
 
@@ -279,6 +286,24 @@ body {
   height: 85vw;
   width: 100%;
   border: none;
+}
+
+/* #puzzle-iframe-wrapper {
+  position: relative;
+  top: 1em;
+} */
+
+
+@media only screen and (min-width: 598px) {
+  #puzzle-iframe-wrapper {
+    height: 45vw;
+  }
+}
+
+@media only screen and (min-width: 598px) {
+  #tic-tac-toe-iframe-wrapper {
+    height: 65vw;
+  }
 }
 
 .project-iframe {
@@ -416,6 +441,24 @@ body {
   padding: 0;
 }
 
+@media only screen and (min-width: 598px) {
+  #see-the-code-button-puzzle {
+    top: 17em;
+  }
+}
+
+@media only screen and (min-width: 598px) {
+  #see-the-code-button-tic-tac-toe {
+    top: 18em;
+  }
+}
+
+@media only screen and (min-width: 598px) {
+  #see-the-code-button-webshop {
+    margin-top: 0.5em;
+  }
+}
+
 
 /* projects - gist */
 
@@ -423,6 +466,12 @@ body {
   display: none;
   width: 95%;
   margin-top: 100px;
+}
+
+@media only screen and (min-width: 598px) {
+  #tic-tac-toe-gist-wrapper{
+    margin-top: 0;
+  }
 }
 
 .gist {  
