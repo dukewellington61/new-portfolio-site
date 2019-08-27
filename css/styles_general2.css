@@ -62,6 +62,12 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 799px) {
+  #intro {  
+    height: 50vh;      
+  }
+}
+
 /* intro - text - field - mobile */
 
 #text-field-intro {
@@ -77,13 +83,14 @@ body {
   color: white;
   font-weight: bold;  
   letter-spacing: 2px;
-  justify-content: left;
+  justify-content: left;  
 }
 
 @media only screen and (min-width: 598px) {
   #text-field-intro-mobile {
-    font-size: 1.5em;
-    margin-top: 3.5em;
+    font-size: 1.25em;
+    margin-top: 4.5em;
+    white-space: nowrap;
   }
 }
 
@@ -134,6 +141,30 @@ body {
   }
 }
 
+@media screen and (min-width: 799px) {
+  #text-field-intro {
+    position: absolute;
+    left: 3em;    
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  #text-line-1  {    
+    top: 15%;
+    font-size: 30px;    
+  }
+  
+  #text-line-2 {
+    top: 20%;
+    font-size: 30px;   
+  }
+  
+  #text-line-3 {
+    top: 25%;
+    font-size: 30px;   
+  }
+}
+
 
 /* intro - image */
 
@@ -150,7 +181,17 @@ body {
   #intro-img {
     margin-left: 0;
     margin-top: 2.75em;
-    width: 50%;
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  #intro-img {    
+    left: 21em;
+    margin-top: 2em;
+    width: 60%;
+    position: absolute;
+    height: 60%;
   }
 }
 
@@ -164,9 +205,9 @@ body {
   background-color: black;
 }
 
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   #read-more-link {  
-    display: none;
+    display: none !important;
   }
 }
 
@@ -195,6 +236,12 @@ body {
   font-size: 4em;
   text-align: center;  
   transform: translateY(-50%);  
+}
+
+@media screen and (min-width: 799px) {
+  #projects-header {
+    font-size: 3em !important;
+  }
 }
 
 @media only screen and (min-width: 598px) {
@@ -229,7 +276,7 @@ body {
 }
 
 
-/* projects - container*/
+/* projects - container */
 
 #puzzle-container {
   margin-top: 5em !important;  
@@ -237,7 +284,13 @@ body {
 
 @media only screen and (min-width: 598px) {
   #puzzle-container {
-    height: 17em;
+    height: 18em;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  #puzzle-container {
+    height: 40em;
   }
 }
 
@@ -288,15 +341,20 @@ body {
   border: none;
 }
 
-/* #puzzle-iframe-wrapper {
+#puzzle-iframe-wrapper {
   position: relative;
   top: 1em;
-} */
-
+}
 
 @media only screen and (min-width: 598px) {
   #puzzle-iframe-wrapper {
     height: 45vw;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  #puzzle-iframe-wrapper {
+    height: 75vw;
   }
 }
 
@@ -350,7 +408,7 @@ body {
 @media only screen and (min-width: 598px) {
   .project-image-container {
     height: 100%;
-    width: 60%;
+    width: 80%;
     left: 50%;
     transform: translateX(-50%);    
   }
@@ -443,7 +501,13 @@ body {
 
 @media only screen and (min-width: 598px) {
   #see-the-code-button-puzzle {
-    top: 17em;
+    top: 18em;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  #see-the-code-button-puzzle {
+    top: 40em;
   }
 }
 
@@ -458,6 +522,8 @@ body {
     margin-top: 0.5em;
   }
 }
+
+
 
 
 /* projects - gist */
@@ -483,7 +549,7 @@ body {
 }
 
 .gist .blob-code-inner {
-  font-size: 1.5em !important
+  font-size: 1em !important
 }
 
 .show-gist {

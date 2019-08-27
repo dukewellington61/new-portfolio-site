@@ -135,14 +135,25 @@ function typeHeaderProject() {
   _PART_INDEX_LINE_0++;	
 };
 
-documentEl.on('scroll.awesome', () => {
-  if (documentEl.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) {
-    
-    const headerProjectInterval = setInterval(typeHeaderProject, 250);
-    documentEl.off('scroll.awesome');
-    setTimeout ( () => clearInterval ( headerProjectInterval ), 6000 )
-  };
-});
+const someKindaFn = () => {
+  const headerProjectInterval = setInterval(typeHeaderProject, 250);
+  setTimeout ( () => clearInterval ( headerProjectInterval ), 6000 )
+};
+
+if (screen.width >= 799 && screen.width <= 992) setTimeout ( () => someKindaFn(), 6000);    
+
+else {
+  documentEl.on('scroll.awesome', () => {
+    if (documentEl.scrollTop() + screen.height - 80 > $('#projects-header').offset().top) {
+      
+      const headerProjectInterval = setInterval(typeHeaderProject, 250);
+      documentEl.off('scroll.awesome');
+      setTimeout ( () => clearInterval ( headerProjectInterval ), 6000 )
+    };
+  });
+};
+
+
 
 
 //Project Fields slide in 

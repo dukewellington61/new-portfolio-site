@@ -78,22 +78,20 @@
 
     <div id="projects-header-mobile">Projects</div>
 
-    <div id="puzzle-container" class="project-container">                 
+    <div id="puzzle-container" class="project-container">      
       
-      <div id="puzzle-iframe-wrapper" class="iframe-wrapper">
+      <div id="puzzle-project-image-container" class="project-image-container">
+        <img id="react-logo" class="project-image" src="./img/react-logo2.png">
+        <span class="project-description">This is a Sliding Puzzle coded with React</span>
+      </div>
 
-        <div id="puzzle-project-image-container" class="project-image-container">
-          <img id="react-logo" class="project-image" src="./img/react-logo2.png">
-          <span class="project-description">This is a Sliding Puzzle coded with React</span>
-        </div>
-          
-        <iframe id="puzzle-iframe" class="project-iframe" src="https://puzzle-react.herokuapp.com/" scrolling="no"></iframe>
-
-        <div id="spinner-div" class="project-spinner spinner-border" role="status">      
-          <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
-          <p>loading app...</p>          
-        </div> 
-        
+      <div id="spinner-div" class="project-spinner spinner-border" role="status">      
+        <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
+        <p>loading app...</p>          
+      </div> 
+      
+      <div id="puzzle-iframe-wrapper" class="iframe-wrapper">           
+        <iframe id="puzzle-iframe" class="project-iframe" src="https://puzzle-react.herokuapp.com/" scrolling="no"></iframe>             
       </div>      
         
       <button id="see-the-code-button-puzzle" class="see-the-code-button btn-lg btn-dark">show the code</button>
@@ -106,14 +104,14 @@
     </div>   
 
 
-    <div id="tic-tac-toe-container" class="project-container">                 
+    <div id="tic-tac-toe-container" class="project-container">    
       
-      <div id="tic-tac-toe-iframe-wrapper" class="iframe-wrapper">
-
-        <div id="tic-tac-toe-project-image-container" class="project-image-container">
+      <div id="tic-tac-toe-project-image-container" class="project-image-container">
           <img id="tic-tac-toe-logo" class="project-image" src="./img/node-logo.jpg">
           <span class="project-description">This is a multiplayer online version of <br> Tic Tac Toe coded with Node.js</span>
-        </div>
+      </div>
+      
+      <div id="tic-tac-toe-iframe-wrapper" class="iframe-wrapper">       
           
         <iframe id="tic-tac-toe-iframe" class="project-iframe" src="https://tic-tac-toe-web-s.herokuapp.com/" scrolling="no"></iframe>
 
