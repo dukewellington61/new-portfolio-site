@@ -55,9 +55,9 @@
   <div id="intro"><!--intro-->
 
     <div id="text-field-intro" class="intro-field">      
-      <div id="text-line-1"></div>
-      <div id="text-line-2"></div>  
-      <div id="text-line-3"></div>
+      <div id="text-line-1" class="intro-text-lines"></div>
+      <div id="text-line-2" class="intro-text-lines"></div>  
+      <div id="text-line-3" class="intro-text-lines"></div>
       <a id="read-more-link" href="#projects" class="btn btn-secondary btn-lg" role="button">see more</a>
     </div>
 
@@ -110,16 +110,14 @@
           <img id="tic-tac-toe-logo" class="project-image" src="./img/node-logo.jpg">
           <span class="project-description">This is a multiplayer online version of <br> Tic Tac Toe coded with Node.js</span>
       </div>
-      
-      <div id="tic-tac-toe-iframe-wrapper" class="iframe-wrapper">       
-          
-        <iframe id="tic-tac-toe-iframe" class="project-iframe" src="https://tic-tac-toe-web-s.herokuapp.com/" scrolling="no"></iframe>
 
-        <div id="spinner-div" class="project-spinner spinner-border" role="status">      
-          <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
-          <p>loading app...</p>          
-        </div> 
-        
+      <div id="spinner-div" class="project-spinner spinner-border" role="status">      
+        <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
+        <p>loading app...</p>          
+      </div> 
+      
+      <div id="tic-tac-toe-iframe-wrapper" class="iframe-wrapper">          
+        <iframe id="tic-tac-toe-iframe" class="project-iframe" src="https://tic-tac-toe-web-s.herokuapp.com/" scrolling="no"></iframe>        
       </div>      
         
       <button id="see-the-code-button-tic-tac-toe" class="see-the-code-button btn-lg btn-dark">show the code</button>
@@ -132,22 +130,20 @@
     </div>   
 
 
-    <div id="webshop-container" class="project-container">                 
+    <div id="webshop-container" class="project-container">     
       
-      <div id="iframe-wrapper-webshop" class="iframe-wrapper">
+      <div id="webshop-project-image-container" class="project-image-container">
+        <img id="webshop-logo" class="project-image" src="./img/ruby-logo.png">
+        <span class="project-description">This is an example webshop coded with <br> Ruby on Rails</span>
+      </div>
 
-        <div id="webshop-project-image-container" class="project-image-container">
-          <img id="webshop-logo" class="project-image" src="./img/ruby-logo.png">
-          <span class="project-description">This is an example webshop coded with <br> Ruby on Rails</span>
-        </div>
-          
-        <iframe id="webshop-iframe" class="project-iframe" src="https://duke-wellington-example-app.herokuapp.com/" scrolling="yes"></iframe>
-
-        <div id="spinner-div" class="project-spinner spinner-border" role="status">      
-          <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
-          <p>loading app...</p>          
-        </div> 
-        
+      <div id="spinner-div" class="project-spinner spinner-border" role="status">      
+        <span class="fa fa-spinner fa-spin fa-5x text-light"></span>
+        <p>loading app...</p>          
+      </div> 
+    
+      <div id="iframe-wrapper-webshop" class="iframe-wrapper">          
+        <iframe id="webshop-iframe" class="project-iframe" src="https://duke-wellington-example-app.herokuapp.com/" scrolling="yes"></iframe>         
       </div>      
         
       <button id="see-the-code-button-webshop" class="see-the-code-button btn-lg btn-dark" target="_blank" onclick="window.open('https://github.com/dukewellington61/example-webshop');return false;">visit the GitHub</button>  

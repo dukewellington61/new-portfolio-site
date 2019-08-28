@@ -60,7 +60,7 @@ $(function() {
 
 //Type Writer Effect for Intro
 var _CONTENT_LINE_1 = "Hi, I'm Andreas."; 
-var _CONTENT_LINE_2 = "Web Development"; 
+var _CONTENT_LINE_2 = "&ltWeb Development&gt"; 
 var _CONTENT_LINE_3 = "is what I do."; 
 
 var _PART_INDEX_LINE_1 = 0;
@@ -85,7 +85,7 @@ function typeLineOne() {
     setTimeout ( () => $('#text-line-1').toggleClass('changed'), 500 );  
     clearInterval(interval);    
     setTimeout ( () => { 
-      const interval2 = setInterval ( typeLineTwo, 100 );
+      const interval2 = setInterval ( typeLineTwo, 90 );
       setTimeout ( () => { $ ( '#text-line-2' ).toggleClass ('changed'); clearInterval ( interval2 ) }, 2000 );    
     }, 600 );
     
@@ -126,7 +126,7 @@ documentEl.on('scroll', () => {
 
 //Type Writer Effect for Header Projects
 const headerEl = document.querySelector("#projects-header");
-const headerText = "Projects"; 
+const headerText = "&ltProjects&gt"; 
 let _PART_INDEX_LINE_0 = 0;
 
 function typeHeaderProject() { 
