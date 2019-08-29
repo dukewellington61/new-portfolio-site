@@ -250,8 +250,7 @@ window.onload = () => {
   };
 };
 
-
-
+console.log(window.screen.width);
 
 
 
