@@ -22,7 +22,6 @@ $('#navbar-example a, #read-more-link').click(function() {
 });
 
 //No fixed navbar on width 598xpx - 768px
-
 document.addEventListener('scroll', () => removeNavbar());
 
 const removeNavbar = () => {
@@ -153,16 +152,13 @@ else {
   });
 };
 
+//webshop container horizontally scale up on click
+document.querySelector('#webshop-project-image-container').addEventListener("click", () => {horizontallyScaleUp(); marginZero()});
 
+const horizontallyScaleUp = () => document.querySelector('#webshop-container').classList.add('scale-up-hor-center');
 
+const marginZero = () => document.querySelector('#iframe-wrapper-webshop').classList.add('margin-zero');
 
-//Project Fields slide in 
-documentEl.on('scroll', () => {
-  if (documentEl.scrollTop() > screen.height - 200) {
-    
-    $('.project-field').show().addClass('slide-in-elliptic-top-fwd');
-  };
-});
 
 //Iframes reveal themselves on click and see-the-code-buttons appear
 let projectImageVariable = Array.from(document.getElementsByClassName('project-image-container'));
@@ -180,7 +176,7 @@ const hideOrShowElement = e => {
 //Iframe has Loading Spinner
 
 $('#puzzle-iframe').on('load', function(){
-  $('.project-spinner').addClass('hide-spinner')
+  $('.project-spinner').addClass('hide-spinner');
 });
 
 const addClassAfterWindowLoad = () => {  
@@ -250,11 +246,17 @@ window.onload = () => {
   };
 };
 
-console.log(window.screen.width);
 
 
 
 
 
 
+
+
+function newFunction() {
+  console.log(this.style.height);
+  console.log(this.contentWindow.height);
+  this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
+}
 
