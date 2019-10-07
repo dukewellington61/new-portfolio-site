@@ -19,6 +19,13 @@ body {
   display: none;
 } 
 
+@media screen and 
+(max-width: 1280px) and (orientation: landscape) {
+  .fixed-top {
+    position: absolute;
+  }
+}
+
 
 /*background image*/
 #hero_image {
@@ -305,9 +312,21 @@ body {
 }
 
 /* projects - container */
-@media only screen and (max-width: 598px) {
+.project-container {
+  display: inline-block;
+  flex-direction: column;
+  position: relative;  
+  width: 100%;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: white;
+  border-width: 2px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 598px) {
   .project-container {
-    width: 105% !important;
+    height: 16em;
   }
 }
 
@@ -329,6 +348,10 @@ body {
 
 #tic-tac-toe-container {
   margin-top: 5em !important; 
+}
+
+.tic-tac-toe-container-increased-height {
+  height: 35em;
 }
 
 @media only screen and (min-width: 598px) {
@@ -362,23 +385,6 @@ body {
   }
 }
 
-.project-container {
-  display: inline-block;
-  flex-direction: column;
-  position: relative;  
-  width: 100%;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-color: white;
-  border-width: 2px;
-  margin: 0;
-}
-
-@media only screen and (min-width: 598px) {
-  .project-container {
-    height: 16em;
-  }
-}
 
 /* projects - iframes */
 .iframe-wrapper { 
@@ -387,6 +393,30 @@ body {
   border: none;
 }
 
+.project-iframe {
+  height: 100%;
+  /* width: 100%;*/
+  margin: 0 auto;
+  border: none;    
+}
+
+@media only screen and (min-width: 598px) {
+  .project-iframe {   
+    width: 90% !important;    
+  }
+} 
+
+.project-iframe, document {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);  
+}
+
+/* projects - iframes - puzzle */
 @media only screen and (min-width: 598px) {
   #puzzle-iframe-wrapper {
     height: 45vw;
@@ -407,64 +437,49 @@ body {
 }
 
 @media only screen and (min-width: 598px) {
-  #tic-tac-toe-iframe-wrapper {
-    height: 100%;
+  #puzzle-iframe {
+    width: 85% !important;
   }
 }
 
 @media only screen and (min-width: 799px) {
-  #tic-tac-toe-iframe-wrapper {
-    height: 100%;
+  #puzzle-iframe {
+    width: 90% !important;
   }
 }
 
-.project-iframe {
-  height: 100%;
-  width: 100%;    
-  margin: 0 auto;
-  border: none;    
+/* projects - iframes - tic-tac-toe */
+.tic-tac-toe-iframe-wrapper-increased-height {
+  height: 100% !important;
 }
 
-.project-iframe, document {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);  
-}
-
-@media only screen and (min-width: 799px) {
-  #tic-tac-toe-iframe {
-    height: 100%;        
-  }
-}
-
-#iframe-wrapper-webshop {  
-  width: 80%; 
-}
-
-.margin-zero {
-  margin: 0 !important;
+.display-iframe-wrapper-tic-tac-toe {
+  display: block !important;
 }
 
 @media only screen and (min-width: 598px) {
-  #iframe-wrapper-webshop {
-    height: 18em;
-    width: 80%;
-    margin: 0 auto;
+  #tic-tac-toe-iframe-wrapper {
+    height: 100%;
   }
+}
+
+/* projects - iframes - webshop */
+#iframe-wrapper-webshop {  
+  width: 95%; 
+  margin: 0 auto;
+}
+
+.display-iframe-wrapper-webshop {
+  display: block !important;
 }
 
 @media only screen and (min-width: 598px) {
   #iframe-wrapper-webshop {
     height: 90%;    
+    margin: 0 auto !important;
+    display: none;
   }
-}
-
-#webshop-iframe {  
-  width: 80%; 
-}
+}    
 
 /* projects - images */
 .project-image-container {
@@ -608,7 +623,7 @@ body {
 
 @media only screen and (min-width: 598px) {
   #see-the-code-button-webshop {
-    margin-top: 0.5em;
+    top: 18em;
   }
 }
 

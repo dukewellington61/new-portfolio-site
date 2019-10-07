@@ -152,12 +152,28 @@ else {
   });
 };
 
+//Tic Tac Toe container increases in size on click 
+document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight()});
+
+const ticTacToeContainerIncreasedHeight = () => document.querySelector('#tic-tac-toe-container').classList.add('tic-tac-toe-container-increased-height');
+
+const ticTacToeIframeWrapperIncreasedHeight = () => document.querySelector('#tic-tac-toe-iframe-wrapper').classList.add('tic-tac-toe-iframe-wrapper-increased-height');
+
+
+//Tic Tac Toe Iframe vertically scales up on click 
+document.querySelector('#tic-tac-toe-project-image-container').addEventListener("click", () => vericallyScaleUp());
+
+const vericallyScaleUp = () => document.querySelector('#tic-tac-toe-container').classList.add('scale-up-ver-center');
+
+
 //webshop container horizontally scale up on click
-document.querySelector('#webshop-project-image-container').addEventListener("click", () => {horizontallyScaleUp(); marginZero()});
+document.querySelector('#webshop-project-image-container').addEventListener("click", () => {horizontallyScaleUp(); marginZero(); displayIframeWrapperWebShop()});
 
 const horizontallyScaleUp = () => document.querySelector('#webshop-container').classList.add('scale-up-hor-center');
 
 const marginZero = () => document.querySelector('#iframe-wrapper-webshop').classList.add('margin-zero');
+
+const displayIframeWrapperWebShop = () => document.querySelector('#iframe-wrapper-webshop').classList.add('display-iframe-wrapper-webshop');
 
 
 //Iframes reveal themselves on click and see-the-code-buttons appear
@@ -254,9 +270,5 @@ window.onload = () => {
 
 
 
-function newFunction() {
-  console.log(this.style.height);
-  console.log(this.contentWindow.height);
-  this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
-}
+
 
