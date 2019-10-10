@@ -21,7 +21,8 @@ $('#navbar-example a, #read-more-link').click(function() {
   return false;
 });
 
-//No fixed navbar on width 598xpx - 768px
+
+//No fixed navbar on width 598px - 768px
 document.addEventListener('scroll', () => removeNavbar());
 
 const removeNavbar = () => {
@@ -29,6 +30,7 @@ const removeNavbar = () => {
     $(window).scrollTop() > 10 ? document.querySelector('#navbar-example').classList.add('remove-navbar') : document.querySelector('#navbar-example').classList.remove('remove-navbar');  
   };
 };
+
 
 //Interval for Glitch Backround Image
 const glitch = () => {
@@ -123,7 +125,7 @@ documentEl.on('scroll', () => {
 });
   
 
-//Type Writer Effect for Header Projects
+// Type Writer Effect for Header Projects
 const headerEl = document.querySelector("#projects-header");
 const headerText = "&ltProjects&gt"; 
 let _PART_INDEX_LINE_0 = 0;
@@ -152,21 +154,51 @@ else {
   });
 };
 
-//Tic Tac Toe container increases in size on click 
-document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight()});
+
+// Tic Tac Toe container height increases + vertically scales up on clicking the start image or clicking on reconnect button respectively and decreases + vertically scales down on idle socket timeout  
+document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => setTimeout(() => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()}, 500));
+document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()});
+
+
+window.addEventListener('message', message => {  
+  
+  if (message.data[0] === 'disconnect') {   
+    vericallyScaleDown();       
+  };
+
+  if (message.data[0] === 'reconnect') {        
+    vericallyScaleUp('reconnect');
+  };
+
+});
 
 const ticTacToeContainerIncreasedHeight = () => document.querySelector('#tic-tac-toe-container').classList.add('tic-tac-toe-container-increased-height');
 
 const ticTacToeIframeWrapperIncreasedHeight = () => document.querySelector('#tic-tac-toe-iframe-wrapper').classList.add('tic-tac-toe-iframe-wrapper-increased-height');
 
+const vericallyScaleUp = val => {
 
-//Tic Tac Toe Iframe vertically scales up on click 
-document.querySelector('#tic-tac-toe-project-image-container').addEventListener("click", () => vericallyScaleUp());
+  if (!val) {
+    document.querySelector('#tic-tac-toe-container').classList.remove('scale-down-ver-top');
+    document.querySelector('#tic-tac-toe-container').classList.add('scale-up-ver-center');
+    document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+    document.querySelector('#tic-tac-toe-container').style.height = "35em";  
+  }
 
-const vericallyScaleUp = () => document.querySelector('#tic-tac-toe-container').classList.add('scale-up-ver-center');
+  else {
+    document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+    document.querySelector('#tic-tac-toe-container').style.height = "35em";  
+  };
+};
+
+const vericallyScaleDown = () => {
+  document.querySelector('#tic-tac-toe-container').classList.remove('scale-up-ver-center');
+  document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+  document.querySelector('#tic-tac-toe-container').style.height = "85vw";  
+};
 
 
-//webshop container horizontally scale up on click
+// webshop container horizontally scale up on click
 document.querySelector('#webshop-project-image-container').addEventListener("click", () => {horizontallyScaleUp(); marginZero(); displayIframeWrapperWebShop()});
 
 const horizontallyScaleUp = () => document.querySelector('#webshop-container').classList.add('scale-up-hor-center');
@@ -176,7 +208,7 @@ const marginZero = () => document.querySelector('#iframe-wrapper-webshop').class
 const displayIframeWrapperWebShop = () => document.querySelector('#iframe-wrapper-webshop').classList.add('display-iframe-wrapper-webshop');
 
 
-//Iframes reveal themselves on click and see-the-code-buttons appear
+// Iframes reveal themselves on click and see-the-code-buttons appear
 let projectImageVariable = Array.from(document.getElementsByClassName('project-image-container'));
 
 projectImageVariable.map(projectImageContainer => projectImageContainer.addEventListener("click", event => hideOrShowElement(event)));
@@ -190,7 +222,6 @@ const hideOrShowElement = e => {
 
   
 //Iframe has Loading Spinner
-
 $('#puzzle-iframe').on('load', function(){
   $('.project-spinner').addClass('hide-spinner');
 });
@@ -202,8 +233,7 @@ const addClassAfterWindowLoad = () => {
 $(window).on('load', () => addClassAfterWindowLoad());
 
 
-//gist open and close
-
+// Gist open and close
 const gistState = {
   puzzleShow: false,
   ticTacToeShow: false

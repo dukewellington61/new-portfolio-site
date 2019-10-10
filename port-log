@@ -1,10 +1,38 @@
-Tic Tac Toe design smalest screen size
+TIC TAC TOE:
 
-enter your name field: covering the whole mid - section of the gamefield (that would have to be part of app)
+enter your name field: covering the whole mid - section of the gamefield --- solved
 
-on click image - image disappears and iframe content increases in whidth (same as web shop)
+
+optional: 
 
 below gamefield button send message to name (that would have to be part of app)
 
-on click above mentioned button chatt area opens underneath gamefield --> ifrane heigth has to increase in size in accordance with content
+on click above mentioned button chat area opens underneath gamefield --> ifrane heigth has to increase in size in accordance with content
 
+
+different colors for messages (like fb messenger)
+
+
+idle socket disconnect:
+
+to be implemented in app:
+- chat area disappears
+- reconnect button (where name input field and start button are)
+
+to be implemented in homepage:
+- iframe hight changes dynamically
+
+result:
+- on idle socket disconnect -> only gamefield is visible
+- above it says you're disconnected
+- in the middle it has reconnect button
+- iframe height in accordance with above mentioned
+
+
+
+change iframe height dynamically:
+
+https://stackoverflow.com/questions/819416/adjust-width-and-height-of-iframe-to-fit-with-content-in-it
+
+
+Problem: tic tac toe iframe sometimes doesn't increase in size on click
