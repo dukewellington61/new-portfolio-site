@@ -156,46 +156,59 @@ else {
 
 
 // Tic Tac Toe container height increases + vertically scales up on clicking the start image or clicking on reconnect button respectively and decreases + vertically scales down on idle socket timeout  
-document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => setTimeout(() => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()}, 500));
-document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()});
+// document.querySelector('#tic-tac-toe-logo').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()});
+// document.querySelector('#project-description-tic-tac-toe').addEventListener("click", () => {ticTacToeContainerIncreasedHeight(); ticTacToeIframeWrapperIncreasedHeight(); vericallyScaleUp()});
 
 
-window.addEventListener('message', message => {  
+// window.addEventListener('height', message => {  
   
-  if (message.data[0] === 'disconnect') {   
-    vericallyScaleDown();       
-  };
+//   if (message.data[0] === 'disconnect') {   
+//     vericallyScaleDown();       
+//   };
 
-  if (message.data[0] === 'reconnect') {        
-    vericallyScaleUp('reconnect');
-  };
+//   if (message.data[0] === 'reconnect') {        
+//     vericallyScaleUp('reconnect');
+//   };
 
-});
+// });
 
-const ticTacToeContainerIncreasedHeight = () => document.querySelector('#tic-tac-toe-container').classList.add('tic-tac-toe-container-increased-height');
+// const ticTacToeContainerIncreasedHeight = () => document.querySelector('#tic-tac-toe-container').classList.add('tic-tac-toe-container-increased-height');
 
-const ticTacToeIframeWrapperIncreasedHeight = () => document.querySelector('#tic-tac-toe-iframe-wrapper').classList.add('tic-tac-toe-iframe-wrapper-increased-height');
+// const ticTacToeIframeWrapperIncreasedHeight = () => document.querySelector('#tic-tac-toe-iframe-wrapper').classList.add('tic-tac-toe-iframe-wrapper-increased-height');
 
-const vericallyScaleUp = val => {
+// const vericallyScaleUp = val => {
 
-  if (!val) {
-    document.querySelector('#tic-tac-toe-container').classList.remove('scale-down-ver-top');
-    document.querySelector('#tic-tac-toe-container').classList.add('scale-up-ver-center');
-    document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
-    document.querySelector('#tic-tac-toe-container').style.height = "35em";  
-  }
+//   if (!val) {
+//     document.querySelector('#tic-tac-toe-container').classList.remove('scale-down-ver-top');
+//     document.querySelector('#tic-tac-toe-container').classList.add('scale-up-ver-center');
+//     document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+//     document.querySelector('#tic-tac-toe-container').style.height = "36em";  
+//   }
 
-  else {
-    document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
-    document.querySelector('#tic-tac-toe-container').style.height = "35em";  
-  };
+//   else {
+//     document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+//     document.querySelector('#tic-tac-toe-container').style.height = "36em";  
+//   };
+// };
+
+// const vericallyScaleDown = () => {
+//   document.querySelector('#tic-tac-toe-container').classList.remove('scale-up-ver-center');
+//   document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
+//   document.querySelector('#tic-tac-toe-container').style.height = "85vw";  
+// };
+
+
+// Tic Tac Toe dynamic iframe height
+
+window.addEventListener('message', bodyHeight => dynamicIframeHeight(bodyHeight));  
+
+const dynamicIframeHeight = height => {
+  console.log(height.data);
+  if (height.data === '376px') document.querySelector('#tic-tac-toe-iframe-wrapper').style.height = '85vw';
+
+  else document.querySelector('#tic-tac-toe-iframe-wrapper').style.height = height.data;  
 };
 
-const vericallyScaleDown = () => {
-  document.querySelector('#tic-tac-toe-container').classList.remove('scale-up-ver-center');
-  document.querySelector('#tic-tac-toe-container').style.transition = "all 1s ease-in-out";
-  document.querySelector('#tic-tac-toe-container').style.height = "85vw";  
-};
 
 
 // webshop container horizontally scale up on click

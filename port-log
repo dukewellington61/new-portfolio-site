@@ -35,4 +35,15 @@ change iframe height dynamically:
 https://stackoverflow.com/questions/819416/adjust-width-and-height-of-iframe-to-fit-with-content-in-it
 
 
-Problem: tic tac toe iframe sometimes doesn't increase in size on click
+Problem: tic tac toe iframe sometimes doesn't increase in size on click -- solved
+
+I want iframe to increase in height in accordance with it's content because if for example user enters a really long name content gets heigher than iframe --> on resize body - send message
+with body height
+
+
+
+bug: player 1 (name entered) reconnect after idle socket disconnect and player 2 name entered and connected:
+
+Disconnect roomsArray[0].player1: no have & roomsArray[0].player2: [object Object]
+/home/theironduke/webdev/JS_Kurs/Teil_4/TicTacToeWebS/server.js:116
+            obj.player1.emit('to-move', {moveMessage: `${obj[obj.player2.id]}'s turn`}); 
