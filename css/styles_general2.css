@@ -449,6 +449,11 @@ body {
 }
 
 /* projects - iframes - tic-tac-toe */
+#reload-button {
+  position: absolute;
+  z-index: 2 !important;
+}
+
 .tic-tac-toe-iframe-wrapper-increased-height {
   height: 100% !important;
 }
@@ -568,6 +573,12 @@ body {
     width: 100%;
     z-index: 1;
   }
+}
+
+.hide-puzzle-spinner {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
 }
 
 .hide-spinner {

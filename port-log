@@ -46,4 +46,62 @@ bug: player 1 (name entered) reconnect after idle socket disconnect and player 2
 
 Disconnect roomsArray[0].player1: no have & roomsArray[0].player2: [object Object]
 /home/theironduke/webdev/JS_Kurs/Teil_4/TicTacToeWebS/server.js:116
-            obj.player1.emit('to-move', {moveMessage: `${obj[obj.player2.id]}'s turn`}); 
+            obj.player1.emit('to-move', {moveMessage: `${obj[obj.player2.id]}'s turn`});  --- solved
+
+
+on open gist puzzle smallest screen size layout messed up
+
+
+
+on open app from portfolio page after a longer break, two players are not beeing connected. Only after reload the two players find each other. I think heroku server problem.
+problem doesn't always occur
+
+
+
+if app has been opened on portfolio page and screen is turned off and left alone after a longer period of time only the game field is beeing displayed and nothing else. 
+- in order to restart app browser tab must be refreshed
+- if the other player connects the app is restarted but:
+    - no start button
+    - the iframe is too small (85vw)
+    - idle socket disconnect doesn't work
+    - the name is undefined
+
+    if no game has been started an phone player disconects on idle socket the app behaves as desired as long as the screen isn't turned off --> after a longer period of turned of screen
+    the reconnect button disappears
+
+    after idle socket disconnect sometime  between 1 and 2 minutes app turns into the above mentioned state
+
+possible solution:
+
+https://stackoverflow.com/questions/15959244/is-it-possible-in-javascript-to-detect-when-the-screen-is-turned-off-in-the-an
+
+after turn screen off incuded hiatus code checks time passed. If time > 1.5 minute -> reload()
+
+the above mentioned doesn't work
+
+the problem doesn't occur all the time 
+
+maybe it's my device --> check other devices
+
+after endless hours awasted: ugly little work - around I've implemented a little reload button on the portfolio page which is beeing displayed all the time.
+
+It would be a lot nicer if said button showed up only if above mentioned state (app 'sleeps' after longer period of screen turned off) occurs --> detect via missing elements --> not
+
+possible to detect this from the portfolio page (cross-origin stuff) - maybe detect in client.js of app and send message to parent? --> most likely a waste of time though because too many constalations to check
+
+
+
+during screen off idle socket disconnect is still working - that means js code is still executed even with screen off
+
+I get the following error message when app has fallen asleep:
+
+hmr-runtime.js:29 WebSocket connection to 'wss://puzzle-react.herokuapp.com:35605/' failed: WebSocket opening handshake timed out
+parcelRequire.BkS0 @ hmr-runtime.js:29
+
+
+make sure that on click reload button iframe is properly resized
+
+
+
+check if scale up & scale down animations make sense
+

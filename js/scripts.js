@@ -199,7 +199,6 @@ else {
 
 
 // Tic Tac Toe dynamic iframe height
-
 window.addEventListener('message', bodyHeight => dynamicIframeHeight(bodyHeight));  
 
 const dynamicIframeHeight = height => {
@@ -234,16 +233,30 @@ const hideOrShowElement = e => {
 };
 
   
-//Iframe has Loading Spinner
+// Iframes have loading spinner
 $('#puzzle-iframe').on('load', function(){
-  $('.project-spinner').addClass('hide-spinner');
+  $('#puzzle-spinner-div').addClass('hide-puzzle-spinner');
 });
 
 const addClassAfterWindowLoad = () => {  
-  if (!$('.project-spinner').hasClass('hide-spinner')) $('.project-spinner').addClass('hide-spinner');
+  if (!$('#puzzle-spinner-div').hasClass('hide-spinner')) $('#puzzle-spinner-div').addClass('hide-spinner');
 };
 
 $(window).on('load', () => addClassAfterWindowLoad());
+
+
+$('#tic-tac-toe-iframe').on('load', function(){
+  $('#tic-tac-toe-spinner-div').addClass('hide-spinner');
+});
+
+$('#webshop-iframe').on('load', function(){
+  $('#webshop-spinner-div').addClass('hide-spinner');
+});
+
+
+// Tic tac toe iframe has permanent reload button
+document.querySelector('#reload-button').addEventListener('click', () => document.querySelector('#tic-tac-toe-iframe').contentWindow.postMessage('reload-app', '*'));
+
 
 
 // Gist open and close
@@ -304,14 +317,6 @@ window.onload = () => {
     };
   };
 };
-
-
-
-
-
-
-
-
 
 
 
