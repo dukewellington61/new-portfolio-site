@@ -201,13 +201,10 @@ else {
 // Tic Tac Toe dynamic iframe height
 window.addEventListener('message', bodyHeight => dynamicIframeHeight(bodyHeight));  
 
-const dynamicIframeHeight = height => {
-  console.log(height.data);
+const dynamicIframeHeight = height => {  
   if (height.data === '376px') document.querySelector('#tic-tac-toe-iframe-wrapper').style.height = '85vw';
-
   else document.querySelector('#tic-tac-toe-iframe-wrapper').style.height = height.data;  
 };
-
 
 
 // webshop container horizontally scale up on click
@@ -255,7 +252,29 @@ $('#webshop-iframe').on('load', function(){
 
 
 // Tic tac toe iframe has permanent reload button
-document.querySelector('#reload-button').addEventListener('click', () => document.querySelector('#tic-tac-toe-iframe').contentWindow.postMessage('reload-app', '*'));
+// document.querySelector('#reload-button').addEventListener('click', () => document.querySelector('#tic-tac-toe-iframe').contentWindow.postMessage('reload-app', '*'));
+
+
+// Portfolio page is receiving ping from tic tac toe app every second --> if ping stops reload button in upper left corner is beeing displayed 
+
+// const pingTimeObj = {}
+
+// window.addEventListener('message', msg => {
+//   if (msg.data === 'ping') {
+//     let currentPingTime = new Date().toLocaleTimeString();        
+//     pingTimeObj.time = currentPingTime;
+//     console.log(pingTimeObj);
+//   };
+// }); 
+
+// Tic tac toe iframe dynmaically displays reload button in upper left corner if app has fallen asleep in 
+window.addEventListener('message', msg => {
+  if (msg.date === 'app-sleeps') {
+    document.querySelector('#reload-button').classList.remove('reload-button-display-none');
+    document.querySelector('#reload-button').addEventListener('click', () => document.querySelector('#tic-tac-toe-iframe').contentWindow.postMessage('reload-app', '*'));
+  };
+}); 
+
 
 
 
@@ -317,6 +336,5 @@ window.onload = () => {
     };
   };
 };
-
 
 

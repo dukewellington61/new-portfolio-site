@@ -83,7 +83,7 @@ the problem doesn't occur all the time
 
 maybe it's my device --> check other devices
 
-after endless hours awasted: ugly little work - around I've implemented a little reload button on the portfolio page which is beeing displayed all the time.
+after endless hours awasted: ugly little workaround: I've implemented a little reload button on the portfolio page which is beeing displayed all the time.
 
 It would be a lot nicer if said button showed up only if above mentioned state (app 'sleeps' after longer period of screen turned off) occurs --> detect via missing elements --> not
 
@@ -98,10 +98,38 @@ I get the following error message when app has fallen asleep:
 hmr-runtime.js:29 WebSocket connection to 'wss://puzzle-react.herokuapp.com:35605/' failed: WebSocket opening handshake timed out
 parcelRequire.BkS0 @ hmr-runtime.js:29
 
-
-make sure that on click reload button iframe is properly resized
-
+wasn't able to make sense of the above mentioned. doesn't really matter - error message appears even if app hasn't fallen asleep
 
 
-check if scale up & scale down animations make sense
+make sure that on click reload button iframe is properly resized -- solved
+
+
+
+
+
+Idea on how to check if app has gone sleep on screen off
+
+send message at periodic intervall from app to portfolio page 
+
+if message stops reload button is beeing displayed
+
+problem: how to detect if message has stopped?
+
+everytime a message is recieved the current time is stored in an array.
+
+at intervall the last entry to that array is compared to current time.
+
+if difference betweend last entry to that array and current time > x display reload button
+
+doesn't work: message is send even if the app has fallen asleep
+
+latest approach: has been tried before: check if dom elements aren't beeing displayed: this thime more well thought through (I think) 
+
+update: check if chat area is displayed - if so app doesn't sleep
+
+--> however, can't be tested because app doesn't fall asleep
+
+try again later
+
+
 

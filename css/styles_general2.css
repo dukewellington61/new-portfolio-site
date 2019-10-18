@@ -454,6 +454,10 @@ body {
   z-index: 2 !important;
 }
 
+.reload-button-display-none {
+  display: none;
+}
+
 .tic-tac-toe-iframe-wrapper-increased-height {
   height: 100% !important;
 }
