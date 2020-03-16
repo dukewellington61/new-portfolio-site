@@ -129,7 +129,23 @@ update: check if chat area is displayed - if so app doesn't sleep
 
 --> however, can't be tested because app doesn't fall asleep
 
-try again later
+try again later -- solved
+
+
+next bug: chat always you same color - messages beeing sent back and forth are messing up my shit -- nope, doesn't - or so it seems now, meaning so far I've failed to reproduce the bug
+
+test:
+
+complete test cases in test cases.odt and perform tests
+
+improve monitoring capabilities via heroku loggs -t by adding console.logs in server.js where it matters (test in development)
 
 
 
+smallest screen size:
+
+if name is entered in screen landscape mode and then turned in portrait mode, iframe wrapper doesn't scale up in height
+
+solution: check screen orientation (like in client.js) -> if portrait call dynamicIframeHeight() - passed in paramter must be taken from oject which is set on enter name and contains height app
+
+or better yet: whenever screen is turned check height app and scale ifram wrapper height accordingly
